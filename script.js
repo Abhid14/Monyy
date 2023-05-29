@@ -1,18 +1,111 @@
 gsap.registerPlugin(ScrollTrigger);
+const t1 = gsap.timeline();
 
-gsap.to(".empty-mock, .hero-mock-1", {
-  y:0,
-  rotation: 0,
-  duration: 1,
-});
+t1.fromTo(
+  ".heading-1",
+  {
+    opacity: 0,
+    y: 100,
+  },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+  }
+)
+  .fromTo(
+    ".hero-showcase",
+    {
+      opacity: 0,
+      y: 400,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    },
+    "<"
+  )
+  .fromTo(
+    ".accent-box",
+    {
+      x: 0,
+    },
+    {
+      x: "60vh",
+      // width: "26px",
+      // width: "50vw",
+      duration: 1,
+      yoyo: true,
+    },
+    {
+      x: 0,
+    },
+    {
+      x: "60vh",
+      // width: "26px",
+      // width: "50vw",
+      duration: 1,
+    },
+    "<"
+  )
+  .fromTo(
+    ".hero-cta-desktop",
+    {
+      opacity: 0,
+      y: 200,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    },
+    "<"
+  )
 
-gsap.to(".empty-mock, .hero-mock-1", {
-  x:0,
-  rotation: 0,
-  duration: 4,
-});
+  .fromTo(
+    ".navbar-no-shadow",
+    {
+      opacity: 0,
+      y: -100,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    },
+    "<"
+  )
+  .fromTo(
+    ".accent-box",
 
-// 150.72 82.4 40 margin
+    {
+      width: "26px",
+      x: "60vh",
+      left: "calc(50% - 26px)",
+    },
+    {
+      width: "50vw",
+      x: 0,
+      left: "calc(50% - 50vw)",
+      duration: 0.2,
+    }
+  );
+
+// timeline.to(".empty-mock, .hero-mock-1", {
+//   x: 0,
+//   rotation: 0,
+//   duration: 3,
+// },
+// "<",
+// );
+
+// timeline.to(".accent-box ", {
+//   x: "50vw",
+//   duration: 5,
+// },
+// "<",
+// );
 
 gsap.to(".hero-1-marquee-horizontal", {
   opacity: 0,
@@ -33,33 +126,33 @@ gsap.to(".container-hero-1", {
     end: "bottom top",
   },
 });
-// gsap.to(".hero-mock-center", {
-//   y: -350,
-//   scrollTrigger: {
-//     trigger: ".hero-1",
-//     scrub: true,
-//     start: "top top",
-//     end: "bottom top",
-//   },
-// });
-// gsap.to(".hero-mock-1", {
-//   y: -290,
-//   scrollTrigger: {
-//     trigger: ".hero-1",
-//     scrub: true,
-//     start: "top top",
-//     end: "bottom top",
-//   },
-// });
-// gsap.to(".empty-mock", {
-//   y: -250,
-//   scrollTrigger: {
-//     trigger: ".hero-1",
-//     scrub: true,
-//     start: "top top",
-//     end: "bottom top",
-//   },
-// });
+gsap.to(".hero-mock-center", {
+  y: -350,
+  scrollTrigger: {
+    trigger: ".hero-1",
+    scrub: true,
+    start: "top top",
+    end: "bottom top",
+  },
+});
+gsap.to(".hero-mock-1", {
+  y: -290,
+  scrollTrigger: {
+    trigger: ".hero-1",
+    scrub: true,
+    start: "top top",
+    end: "bottom top",
+  },
+});
+gsap.to(".empty-mock", {
+  y: -250,
+  scrollTrigger: {
+    trigger: ".hero-1",
+    scrub: true,
+    start: "top top",
+    end: "bottom top",
+  },
+});
 
 gsap.fromTo(
   ".sel-country-card-1",
@@ -172,7 +265,7 @@ gsap.fromTo(
   ".section-4-cards-container",
   { y: 0 }, // Initial y position
   {
-    y: "-500vh",
+    y: "-300vh",
     scrollTrigger: {
       trigger: ".section-4",
       scrub: true,
