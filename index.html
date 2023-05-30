@@ -6,9 +6,11 @@
   data-wf-site="646218ec363076eb172059f1"
   class="w-mod-js wf-rubik-n3-active wf-rubik-n7-active wf-rubik-n8-active wf-rubik-n5-active wf-rubik-n4-active wf-rubik-n6-active wf-rubik-n9-active wf-karla-n6-active wf-karla-n8-active wf-karla-n7-active wf-karla-n3-active wf-karla-n5-active wf-karla-n4-active wf-active"
 >
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js"></script>
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script>setTimeout(() => {window.scrollTo(0, -10);},200)</script>
+
     <style>
       .wf-force-outline-none[tabindex="-1"]:focus {
         outline: none;
@@ -106,7 +108,7 @@
         }
       </style>
     </div>
-    <div class="lottie-splash" style="display: none">
+    <div class="lottie-splash">
       <div
         data-w-id="01c36d37-578e-9004-fa62-d62b91926866"
         data-animation-type="lottie"
@@ -350,8 +352,7 @@
         </div>
       </div>
     </div>
-    <div class="section hero hero-1"
-	>
+    <div class="section hero hero-1">
       <div class="container-hero-1">
         <h1 class="heading-1">
           <span class="text-span-2">One Wallet, Endless</span>
@@ -382,11 +383,10 @@
           .accent-box {
             z-index: 1;
             height: 50px;
-            width: 26px;
+            width: 36px;
             background-color: #613ae7;
             mix-blend-mode: multiply;
           }
-
         </style>
         <div class="hero-cta-desktop">
           <div class="polka">
@@ -416,14 +416,12 @@
           </div>
         </div>
       </div>
-      <div
-        class="hero-showcase w-container"
-      >
+      <div class="hero-showcase w-container">
         <img
           src="./Monyy&#39;s Landing_files/6464ca8b391ec709787a2de2_empty-mock.png"
-          loading="lazy"
+          loading="eager"
           alt=""
-          class="empty-mock"
+          class="empty-mock e-m-1"
         /><img
           src="./Monyy&#39;s Landing_files/6464be509be93d6e982074fe_mock-up-5.png"
           loading="eager"
@@ -441,9 +439,9 @@
           class="hero-mock-1 h-m-2"
         /><img
           src="./Monyy&#39;s Landing_files/6464ca8b391ec709787a2de2_empty-mock.png"
-          loading="lazy"
+          loading="eager"
           alt=""
-          class="empty-mock"
+          class="empty-mock e-m-2"
         />
       </div>
       <div class="hero-1-marquee-horizontal w-container">
@@ -769,7 +767,7 @@
             </div>
           </address>
         </div>
-        <div class="div-block-2">
+        <div class="div-block-2 download-cta-mob">
           <a
             href="https://monyys-landing.webflow.io/#"
             class="button-primary download-btn w-inline-block"
@@ -978,8 +976,8 @@
     </section>
     <address
       id="how-it-works"
-      class="section section-4 wf-section"
-      style="height: 500vh"
+      class="section section-4 wf-section how-it-works-cont"
+	  style="height: 400vh"
     >
       <img
         src="./Monyy&#39;s Landing_files/646a8bd9332589dfa3bbb689_unsplash_zSXSMKko6TA.png"
@@ -1051,7 +1049,10 @@
           <div
             class="container section-4-container-scroll section-4-container-scroll-1 w-container"
           >
-            <div class="section-4-feat-cards">
+            <div
+              class="section-4-feat-cards "
+              data-card-index="1"
+            >
               <p class="paragraph-how-it-works">
                 Open the app and tap on “Scan to pay”
               </p>
@@ -1060,7 +1061,10 @@
           <div
             class="container section-4-container-scroll section-4-container-scroll-2 w-container"
           >
-            <div class="section-4-feat-cards">
+            <div
+              class="section-4-feat-cards "
+              data-card-index="2"
+            >
               <p class="paragraph-how-it-works">
                 Scan the QR code at the store
               </p>
@@ -1069,14 +1073,20 @@
           <div
             class="container section-4-container-scroll section-4-container-scroll-3 w-container"
           >
-            <div class="section-4-feat-cards">
+            <div
+              class="section-4-feat-cards "
+              data-card-index="3"
+            >
               <p class="paragraph-how-it-works">Enter the amount and pay</p>
             </div>
           </div>
           <div
             class="container section-4-container-scroll section-4-container-scroll-4 w-container"
           >
-            <div class="section-4-feat-cards">
+            <div
+              class="section-4-feat-cards "
+              data-card-index="4"
+            >
               <p class="paragraph-how-it-works">
                 Enjoy the fast payment experience
               </p>
