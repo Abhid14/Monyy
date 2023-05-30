@@ -1,11 +1,104 @@
 html {
   scroll-behavior: smooth;
   user-select: none;
-} 
-.hero-showcase{
+}
+body.scroll-lock {
+    overflow: hidden;
+    margin-right: calc(100vw - 100%);
+}
+.hero-showcase {
   margin-top: 40px;
 }
 .section.hero-1 {
-  overflow-y:hidden;
+  overflow-y: hidden;
+}
+
+.overlay-bar-section-4,
+.strange-container-section-4 {
+  height: 100vh;
+}
+
+.how-img-1 {
+  z-index: 0;
+  opacity: 1;
+}
+
+.how-img-2 {
+  z-index: 1;
+  opacity: 0;
+}
+.how-img-3 {
+  z-index: 2;
+  opacity: 0;
+}
+.how-img-4 {
+  z-index: 3;
+  opacity: 0;
+}
+
+.sel-country-card {
+  border: 0;
+  outline: 2px solid #4e596f;
+  box-shadow: 0px 0px 0px #0f0e17;
+  transition: all 200ms ease-out;
+  outline-offset: -4px; /* Adjust the value as needed */
+}
+.sel-country-card-1:hover > :first-child {
+  outline: 3px solid #a7a9be;
+  box-shadow: -4px 0px 0px #613ae7;
+}
+.sel-country-card-2:hover > :first-child {
+  outline: 3px solid #a7a9be;
+  box-shadow: 4px 0px 0px #613ae7;
+}
+/* For WebKit browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #613ae7;
+  border-radius: 10px;
+  border: 2px solid #0f0e17;
+}
+
+* {
+  scrollbar-color: #613ae7 #0f0e17;
+}
+
+@media only screen and (max-width: 479px) {
+  .how-img {
+    width: 180px;
+  }
+  .how-it-works-cont {
+    justify-content: start !important;
+  }
+  .hero-1-marquee-horizontal {
+    position: fixed;
+  }
+  .section-4-cards-container {
+    position: absolute;
+    bottom: 0;
+  }
+  .how-img-cont,
+  .section-4-container-scroll {
+    margin-top: 0 !important;
+  }
+  .section-4-cards-container,
+  .section-4-container-scroll,
+  .section-4-feat-cards {
+    height: 100vh !important;
+  }
+  .section-4-feat-cards {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 70px;
+  }
+  .section-4-container-scroll{
+    position: relative!important;
+    opacity: 1!important;
+  }
 }
 
