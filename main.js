@@ -1,6 +1,4 @@
 // unlock scroll here
-const howItWorksDiv = document.querySelector('#how-it-works');
-howItWorksDiv.setAttribute('style', 'height: 400vh');
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +19,8 @@ mm.add(
     let { isDesktop, isMobile } = context.conditions;
     const t1 = gsap.timeline();
     window.onload = function () {
+      const howItWorksDiv = document.querySelector('#how-it-works');
+      howItWorksDiv.setAttribute('style', 'height: 400vh');
       startShow();
     };
     function startShow() {
