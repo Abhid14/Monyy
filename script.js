@@ -1,5 +1,3 @@
-
-
 // unlock scroll here
 
 gsap.registerPlugin(ScrollTrigger);
@@ -411,72 +409,68 @@ mm.add(
           },
         }
       );
-      gsap.fromTo(
-        ".section-4-cards-container",
-        { y: 0 }, // Initial y position
-        {
-          y: "-300vh",
-          scrollTrigger: {
-            trigger: ".section-4",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
 
-            start: "top top",
-            end: "+=300%",
-          },
-        }
-      );
-
-      // Create an Intersection Observer
-      let rVal;
       if (isDesktop) {
-        rVal = "-200px";
-      } else {
-        rVal = "-200px";
+        gsap.fromTo(
+          ".section-4-cards-container",
+          { y: 0 }, // Initial y position
+          {
+            y: "-300vh",
+            scrollTrigger: {
+              trigger: ".section-4",
+              scrub: true,
+              pin: true,
+              pinSpacing: false,
+
+              start: "top top",
+              end: "+=300%",
+            },
+          }
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const isVisible = entry.isIntersecting;
+              const target = entry.target;
+
+              const cardIndex = target.dataset.cardIndex; // Get the data-card-index attribute value
+
+              const howImg = document.querySelector(`.how-img-${cardIndex}`); // Get the corresponding .how-img element
+
+              if (isVisible) {
+                gsap.to(target, { opacity: 1 }); // Change opacity of the card container to 1 when visible
+                gsap.to(howImg, { opacity: 1 }); // Change opacity of the corresponding .how-img element to 1 when visible
+              } else {
+                gsap.to(target, { opacity: 0 }); // Change opacity of the card container to 0 when not visible
+                gsap.to(howImg, { opacity: 0 }); // Change opacity of the corresponding .how-img element to 0 when not visible
+              }
+            });
+          },
+
+          { rootMargin: "-200px" } // Set the rootMargin to adjust the intersection threshold
+        );
+
+        // Get all the card containers and observe them
+        const cardContainers = document.querySelectorAll(
+          ".section-4-feat-cards"
+        );
+        cardContainers.forEach((container) => {
+          observer.observe(container);
+        });
+
+        gsap.from(".section-4", {
+          height: "100vh", // Initial y position
+          scrollTrigger: {
+            trigger: ".section-5",
+            scrub: true,
+            start: "top top",
+            end: "+=400%",
+          },
+        });
       }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const isVisible = entry.isIntersecting;
-            const target = entry.target;
-
-            const cardIndex = target.dataset.cardIndex; // Get the data-card-index attribute value
-
-            const howImg = document.querySelector(`.how-img-${cardIndex}`); // Get the corresponding .how-img element
-
-            if (isVisible) {
-              gsap.to(target, { opacity: 1 }); // Change opacity of the card container to 1 when visible
-              gsap.to(howImg, { opacity: 1 }); // Change opacity of the corresponding .how-img element to 1 when visible
-            } else {
-              gsap.to(target, { opacity: 0 }); // Change opacity of the card container to 0 when not visible
-              gsap.to(howImg, { opacity: 0 }); // Change opacity of the corresponding .how-img element to 0 when not visible
-            }
-          });
-        },
-
-        { rootMargin: rVal } // Set the rootMargin to adjust the intersection threshold
-      );
-
-      // Get all the card containers and observe them
-      const cardContainers = document.querySelectorAll(".section-4-feat-cards");
-      cardContainers.forEach((container) => {
-        observer.observe(container);
-      });
-
-      gsap.from(".section-4", {
-        height: "100vh", // Initial y position
-        scrollTrigger: {
-          trigger: ".section-5",
-          scrub: true,
-          start: "top top",
-          end: "+=400%",
-        },
-      });
+      
     }
-    return () => {
-     
-    };
+    return () => {};
   }
 );
