@@ -26,7 +26,7 @@ mm.add(
     function startShow() {
       t1.to(".lottie-splash", {
         autoAlpha: 0, // Fade out the element and set its visibility to "hidden"
-        duration: isDesktop ? 2 : 1,
+        duration: isDesktop ? 2 : 1/2,
       })
         .fromTo(
           ".heading-1",
@@ -37,7 +37,7 @@ mm.add(
           {
             opacity: 1,
             y: 0,
-            delay: 1 / 2,
+            delay: isDesktop ? 1 / 2 : 0,
             duration: isDesktop ? 1 : 1 / 2,
           }
         )
