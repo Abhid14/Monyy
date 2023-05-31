@@ -78,7 +78,7 @@ mm.add(
             x: 0,
             y: 0,
             rotate: "0deg",
-            duration: 1,
+            duration: isDesktop ? 1 : 1/2,
           },
           "<"
         )
@@ -93,7 +93,7 @@ mm.add(
             x: 0,
             y: 0,
             rotate: "0deg",
-            duration: 1,
+            duration: isDesktop ? 1 : 1/2,
           },
           "<"
         )
@@ -160,7 +160,7 @@ mm.add(
           {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: isDesktop ? 1 : 3/2,
           },
           "<"
         )
