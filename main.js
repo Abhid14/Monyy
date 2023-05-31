@@ -160,7 +160,7 @@ mm.add(
           {
             opacity: 1,
             y: 0,
-            duration: isDesktop ? 1 : 3/2,
+            duration: isDesktop ? 1 : 1/2,
           },
           "<"
         )
