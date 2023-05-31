@@ -26,7 +26,7 @@ mm.add(
     function startShow() {
       t1.to(".lottie-splash", {
         autoAlpha: 0, // Fade out the element and set its visibility to "hidden"
-        duration: 2,
+        duration: isDesktop ? 2 : 1,
       })
         .fromTo(
           ".heading-1",
@@ -38,7 +38,7 @@ mm.add(
             opacity: 1,
             y: 0,
             delay: 1 / 2,
-            duration: 1,
+            duration: isDesktop ? 1 : 1 / 2,
           }
         )
         .fromTo(
@@ -50,7 +50,7 @@ mm.add(
           {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: isDesktop ? 1 : 1 / 2,
           },
           "<"
         )
@@ -63,7 +63,7 @@ mm.add(
           {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: isDesktop ? 1 : 1 / 2,
           },
           "<"
         )
@@ -183,31 +183,33 @@ mm.add(
     }
 
     function startLoopCta() {
-      const loopTimeline = gsap.timeline({ repeat: -1 });
-      loopTimeline
-        .fromTo(
-          ".accent-box",
-          {
-            x: 0,
-          },
-          {
-            x: "50vw",
-            duration: 3 / 2,
-          }
-        )
-        .fromTo(
-          ".accent-box",
-          {
-            width: "36px",
-            x: "50vw",
-          },
-          {
-            width: "50vw",
-            x: 0,
-            left: "calc(50%)",
-            duration: 1,
-          }
-        );
+      if (isDesktop) {
+        const loopTimeline = gsap.timeline({ repeat: -1 });
+        loopTimeline
+          .fromTo(
+            ".accent-box",
+            {
+              x: 0,
+            },
+            {
+              x: "50vw",
+              duration: 3 / 2,
+            }
+          )
+          .fromTo(
+            ".accent-box",
+            {
+              width: "36px",
+              x: "50vw",
+            },
+            {
+              width: "50vw",
+              x: 0,
+              left: "calc(50%)",
+              duration: 1,
+            }
+          );
+      }
     }
 
     function startScrollerFunc() {
