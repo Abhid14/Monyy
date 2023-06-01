@@ -440,14 +440,9 @@ mm.add(
             scale: 1,
             scrollTrigger: {
               trigger: slide,
-              start: "center center",
-              end: "center center",
+              start: "top center",
+              end: "bottom center",
               scrub: true,
-              onUpdate: (self) => {
-                const progress = self.progress.toFixed(2);
-                const scale = 0.5 + Math.abs(progress - 0.5);
-                gsap.set(slide, { scale: scale });
-              },
             },
           }
         );
