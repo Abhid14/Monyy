@@ -430,6 +430,24 @@ mm.add(
         }
       );
 
+      const mock_slides = gsap.utils.toArray(".slide-mob-home");
+
+      mock_slides.forEach((slide) => {
+        gsap.to(slide, {
+          scale: 1,
+          scrollTrigger: {
+            trigger: slide,
+            start: "center center",
+            end: "center center",
+            scrub: true,
+            onUpdate: (self) => {
+              const progress = self.progress.toFixed(2);
+              const scale = 1 - Math.abs(progress - 0.5);
+              gsap.set(slide, { scale: scale });
+            },
+          },
+        });
+      });
 
       if (isDesktop) {
 
