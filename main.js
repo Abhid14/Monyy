@@ -442,7 +442,9 @@ mm.add(
               trigger: slide,
               start: "top center",
               end: "bottom center",
+              duration: 1,
               scrub: true,
+              ease: "power1.out", // Set the easing function
             },
           }
         );
